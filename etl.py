@@ -172,7 +172,7 @@ def check_data_exists(cur):
     
     # Check that data exists
     for table in tables:
-        cur.execute(data_exists.format(table))
+        cur.execute(data_exists.format(table=table))
         result = cur.fetchone()
         
         assert len(result)>0, f"Data quality Failed on table {table}"
@@ -233,6 +233,9 @@ def main():
     
     # Check data quality
     check_data_exists(cur)
+    
+    # Check for null constraints
+    check_null(cur)
     
 if __name__=="__main__":
     main()

@@ -92,3 +92,6 @@ GROUP BY "year"
  
  **The database needed to be accessed by 100+ people**
  > The use of redshift is a good choice for scaling compute as demand grows. With over 100 people needing to access the database, the database performance will have to be assessed for performance and scaled up as required.
+ 
+ ##### Further Recommendation for ETL performance
+ > To gain a performance boost when running ETL, it is advisable to use an EMR (or EC2) cluster. This will significantly cut down the read and write times from and to S3. In that case, the script will be submitted to spark using `spark-submit etl.py`
