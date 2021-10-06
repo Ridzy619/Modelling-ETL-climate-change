@@ -12,8 +12,6 @@ The project follows the follow steps:
 ### Step 1: Scope the Project and Data Sources
 
 #### Scope 
-Explain what you plan to do in the project in more detail. What data do you use? What is your end solution look like? What tools did you use? etc>
-
 This project extracts and creates data model for the historical temperature data. The end goal is to have a data model that is suitable for answering questions about the data and is performant. To further enrich the data, a demographic data of US cities is added which allows joining finding. 
 
 To achieve this, a star schema is used with one fact table and two dimension tables. Pyspark is used to extract and transform the data. The output is first written to S3 storage from where it is copied into a Redshift cluster.
